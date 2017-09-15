@@ -22,12 +22,6 @@ describe('reader', () => {
       let height = result.readUInt32LE(22);
       let bitsPerPix = result.readUInt16LE(28);
       let sizeOfHeader = result.readUInt32LE(14);
-      // let colorTable = result.readUInt8LE(54);
-      // let blue = result.readUInt8(54);
-      // let green = result.readUInt8(55);
-      // let red = result.readUInt8(56);
-      let rando = result.readUInt8(58);
-      // let PixelArray = result.readUInt8(1078);
       expect(err).toBeNull();
       expect(headerField).toEqual('BM');
       expect(size).toEqual(66616);
@@ -36,13 +30,6 @@ describe('reader', () => {
       expect(height).toEqual(256);
       expect(bitsPerPix).toEqual(8);
       expect(sizeOfHeader).toEqual(40);
-      // expect(blue).toEqual(257);
-      // expect(green).toEqual(267);
-      // expect(red).toEqual(277);
-      expect(rando).toEqual(287);
-
-      // expect(colorTable).toEqual(1);
-      // expect(PixelArray).toEqual(1);
       done();
     });
   });
