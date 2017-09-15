@@ -1,5 +1,6 @@
 'use strict';
 
+// BitMapImage constructor
 module.exports = function BitMapImage(data) {
   this.header = data.header;
   this.size = data.size;
