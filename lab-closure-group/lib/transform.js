@@ -1,6 +1,7 @@
 'use strict';
 
 // Require each transform modules here...
+const invert = require(`./transformations/invert.js`);
 const grayscale = require(`./transformations/grayscale.js`);
 const rainbow = require(`./transformations/rainbow.js`);
 const noise = require('./transformations/noise.js');
@@ -10,14 +11,16 @@ const green = require('./transformations/green.js');
 const flipUp = require('./transformations/flipUp.js');
 const mirror = require('./transformations/mirror.js');
 
-
 module.exports = (object, option) => {
   // Parse the transform flags/options and call their respective modules for transformation of the object.
   // Maybe a switch statement? IDK..
 
-  switch(option) {
-  case 'grayscale':
-    grayscale(object);
+  switch(option) 
+  case 'invert':
+    invert(object);
+    break;
+  case 'invert':
+    invert(object);
     break;
   case 'rainbow':
     rainbow(object);
