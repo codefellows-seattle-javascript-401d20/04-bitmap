@@ -16,8 +16,8 @@ module.exports = (object, option) => {
   // Maybe a switch statement? IDK..
 
   switch(option) 
-  case 'invert':
-    invert(object);
+  case 'grayscale':
+    grayscale(object);
     break;
   case 'invert':
     invert(object);
