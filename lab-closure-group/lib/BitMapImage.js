@@ -14,4 +14,5 @@ module.exports = function BitMapImage(data) {
   this.pixelArrayOffset = this.buffer.readUInt32LE(10);
   this.pixelArraySize = this.imageWidth * this.imageHeight;
   this.colorTable = this.buffer.slice(54, 1024+54);
+  this.pixelArray = this.buffer.slice(this.pixelArrayOffset, this.pixelArrayOffset + this.pixelArraySize);
 };

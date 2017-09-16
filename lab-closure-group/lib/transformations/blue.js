@@ -6,10 +6,8 @@ module.exports = (object) => {
     let green = object.colorTable.readUInt8(i+1);
     let red = object.colorTable.readUInt8(i+2);
 
-    let average = (blue + green + red) / 3;
-
-    object.colorTable.writeUInt8(average, i);
-    object.colorTable.writeUInt8(average, i+1);
-    object.colorTable.writeUInt8(average, i+2);
+    object.colorTable.writeUInt8(255, i);
+    object.colorTable.writeUInt8(green, i+1);
+    object.colorTable.writeUInt8(red, i+2);
   }
 };

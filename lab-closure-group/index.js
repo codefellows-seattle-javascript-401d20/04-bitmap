@@ -11,12 +11,12 @@ const option = process.argv[4];
 
 fs.readFile(`${__dirname}/../asset/${inputFile}`, (err, data) => {
   if(err)
-    return console.log(`Input File: ${inputFile}`);
+    throw new Error('Usage: node index.js <input filename> <output filename> <transformation>');
   let bitMapObj = new BitMapImage(data);
   transform(bitMapObj, option);
   fs.writeFile(`${__dirname}/data/${outputFile}`, bitMapObj.buffer, (err) => {
     if(err)
-      return console.log(`Output File: ${outputFile}`);
+      throw new Error('Usage: node index.js <input filename> <output filename> <transformation>');
     console.log('Bitmap created!');
   });
 });
