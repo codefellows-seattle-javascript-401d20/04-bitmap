@@ -1,0 +1,19 @@
+{
+  "name": "lab-closure-group",
+  "version": "0.0.1",
+  "description": "Lab 4 of 401, Bitmap Transformer. Mark, Christina, Ron, Anthony",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "jest": "^21.0.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage -i",
+    "test-watch": "jest --watch -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
