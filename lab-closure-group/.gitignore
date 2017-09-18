@@ -66,3 +66,5 @@ tags
 
 ###### Personal
 .tern-project
+
+package-lock.json

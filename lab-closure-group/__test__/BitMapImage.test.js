@@ -1,15 +1,15 @@
 'use strict';
 
-const reader = require('../lib/reader.js');
-const parser = require('../lib/parser.js');
+const fs = require('fs');
 const BitMapImage = require('../lib/BitMapImage.js');
 
 describe('BitMapImage', () => {
 
   test('BitMapImage should return a BitMapImage object with correct data for house.bmp.', (done) => {
-    reader(`${__dirname}/../../asset/house.bmp`, (err, data) => {
-      let parsedData = parser(data);
-      let result = new BitMapImage(parsedData);
+    fs.readFile(`${__dirname}/../../asset/house.bmp`, (err, data) => {
+      if(err)
+        throw new Error('Usage: node index.js <input filename> <output filename> <transformation>');
+      let result = new BitMapImage(data);
       expect(err).toBeNull();
       expect(result.header).toEqual('BM');
       expect(result.size).toEqual(66616);
@@ -26,9 +26,10 @@ describe('BitMapImage', () => {
   });
 
   test('BitMapImage should return a BitMapImage object with correct data for bitmap.bmp.', (done) => {
-    reader(`${__dirname}/../../asset/bitmap.bmp`, (err, data) => {
-      let parsedData = parser(data);
-      let result = new BitMapImage(parsedData);
+    fs.readFile(`${__dirname}/../../asset/bitmap.bmp`, (err, data) => {
+      if(err)
+        throw new Error('Usage: node index.js <input filename> <output filename> <transformation>');
+      let result = new BitMapImage(data);
       expect(err).toBeNull();
       expect(result.header).toEqual('BM');
       expect(result.size).toEqual(11078);
